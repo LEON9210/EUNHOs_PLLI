@@ -1,922 +1,234 @@
+<!-- 完整修正後的 PLAVE 入坑大全 HTML -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>PLAVE入坑大全</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="description" content="認識韓國虛擬男子團體PLAVE，探索他們的音樂、世界觀與成員魅力！">
+  <meta name="keywords" content="PLAVE,虛擬偶像,韓國團體,NOAH,YEJUN,BAMBY,EUNHO,HAMIN,PLLI">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
+  <!-- CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Squadfree
-  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    .member-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .member-card:hover {
+      transform: translateY(-10px);
+    }
+    .member-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px; /* 圓角長方形 */
+      margin-bottom: 15px;
+    }
+    .member-card h4 {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #2f4d5a;
+    }
+    .member-card p {
+      font-size: 14px;
+      color: #666;
+    }
+    #hero {
+      background: url('assets/testimonials/plave1-image.png') center center no-repeat;
+      background-size: cover;
+    }
+    .mv-section iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+    }
+    /* 導覽連結顏色修正 */
+    .navmenu a {
+      color: #000;
+    }
+    .navmenu a:hover,
+    .navmenu a.active {
+      color: #5e3cc4; /* 自訂主色調，可調整 */
+    }
+    .header {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+    }
+    .plave {
+      font-size: 2rem;
+      color: #000000; /* 自訂主色調，可調整 */
+      font-weight: 800;
+      font-size: 2rem;
+    }
+  </style>
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Squadfree</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section accent-background">
-
-      <img src="assets\img\plave1-image.png" alt="" data-aos="fade-in">
-
-      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-        <h2>你還沒入坑PLAVE嗎 ! ?</h2>
-        <p>看完入坑介紹還沒陷進去成為忠實PLLI算我輸</p>
-        <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-<!-- About Section -->
-<section id="about" class="about section">
-  <div class="container">
-    <div class="row gy-5">
-      <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
-        <h3>關於 PLAVE</h3>
-        <p>
-          PLAVE 是由 VLAST 製作、具有網路漫畫風格的虛擬男子團體，於 2023 年 3 月 12 日正式出道，成員包括 NOAH、YEJUN、BAMBY、EUNHO 和 HAMIN。
-        </p>
-        <p>
-          團名 PLAVE 是「Play」與「Rêve」的結合，象徵著「為了實現夢想而創造新的世界」，成員們皆具備作曲、作詞、編舞的能力，並能勝任唱歌、舞蹈及 Rap。
-        </p>
-        <p>
-          粉絲名 PLLI (플리) 結合了「Play」與「Reality」，PLAVE 代表夢境與幻想，而粉絲則是現實的陪伴，象徵著偶像與粉絲之間的緊密聯繫。
-        </p>
-        <p>
-          PLAVE 主要透過 3D 模組進行活動，直播與 MV 拍攝皆由成員親自參與，並透過動態捕捉技術帶來高品質的視覺與舞台體驗。
-        </p>
-        <a href="#" class="about-btn align-self-center align-self-xl-start"><span>了解更多</span> <i class="bi bi-chevron-right"></i></a>
-      </div>
-      <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
-        <div class="row gy-4">
-          <div class="col-md-6 icon-box position-relative">
-            <i class="bi bi-music-note"></i>
-            <h4><a href="" class="stretched-link">音樂創作</a></h4>
-            <p>PLAVE 以獨特的音樂風格，結合未來感與流行元素，為粉絲帶來動人旋律與視覺饗宴。</p>
-          </div><!-- Icon-Box -->
-          <div class="col-md-6 icon-box position-relative">
-            <i class="bi bi-people"></i>
-            <h4><a href="" class="stretched-link">虛擬偶像互動</a></h4>
-            <p>透過社群平台與直播技術，PLAVE 成員能夠即時與粉絲互動，打造沉浸式體驗。</p>
-          </div><!-- Icon-Box -->
-          <div class="col-md-6 icon-box position-relative">
-            <i class="bi bi-film"></i>
-            <h4><a href="" class="stretched-link">精美動畫</a></h4>
-            <p>高品質 3D 動畫與動作捕捉技術，讓 PLAVE 成員在舞台上展現完美表演。</p>
-          </div><!-- Icon-Box -->
-          <div class="col-md-6 icon-box position-relative">
-            <i class="bi bi-globe"></i>
-            <h4><a href="" class="stretched-link">全球粉絲社群</a></h4>
-            <p>PLAVE 透過數位平台連結全球粉絲，共同創造專屬於這個世代的偶像文化。</p>
-          </div><!-- Icon-Box -->
-        </div>
-      </div>
-    </div>
+<header id="header" class="header fixed-top d-flex align-items-center">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1 class="plave">PLAVE入坑大全</h1>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active">首頁</a></li>
+        <li><a href="#about">關於PLAVE</a></li>
+        <li><a href="#worldview">世界觀</a></li>
+        <li><a href="#members">成員介紹</a></li>
+        <li><a href="#mvs">MV播放</a></li>
+      </ul>
+    </nav>
   </div>
-</section><!-- /About Section -->
+</header>
 
+<main class="main">
 
-<!-- Members Section -->
-<section id="members" class="members section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>成員介紹</h2>
-    <p>認識 PLAVE 的五位成員，他們各具特色，為團體帶來獨特魅力。</p>
-  </div>
+  <section id="hero" class="hero section">
+    <div class="container text-center">
+      <h2 class="mt-4">走進虛擬與現實交織的奇幻世界</h2>
+      <p>跟隨 PLAVE，一起編織屬於我們的夢想！</p>
+    </div>
+    <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\plave1-image.png" alt="PLAVE 主視覺" style="max-width: 100%; border-radius: 20px;">
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>關於PLAVE</h2>
+      </div>
+      <p>PLAVE（플레이브）是韓國首創的虛擬男子音樂團體，由VLAST企劃製作，五位成員為虛擬3D人物，透過動作捕捉與真人聲音展現個性與才華。他們於2023年3月12日以單曲《Wait for you》正式出道，從首發就備受矚目。</p>
+      <p>團名「PLAVE」結合了英文「Play」與法語「Rêve（夢）」，象徵著透過音樂與夢想的結合創造全新世界。成員們不僅會唱歌跳舞，更參與作詞、作曲、編舞與影像創作，擁有全方位的偶像實力。</p>
+      <ul>
+        <li><strong>出道日：</strong>2023年3月12日</li>
+        <li><strong>所屬公司：</strong>VLAST</li>
+        <li><strong>粉絲名稱：</strong>PLLI（플리）</li>
+        <li><strong>代表風格：</strong>未來感、劇情性、互動型偶像</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="worldview" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>PLAVE的世界觀</h2>
+      </div>
+      <p>PLAVE的故事由「Terra」、「Caelum」和「Asterum」三個空間展開。</p>
+      <ul>
+        <li><strong>Terra：</strong>即地球，是人類所居住的現實世界。</li>
+        <li><strong>Caelum：</strong>虛擬空間，人類創造角色後，他們在此獲得生命。</li>
+        <li><strong>Asterum：</strong>生命空間，角色在誕生與消逝之間會以立方體形態存在。</li>
+      </ul>
+      <p>當角色獲得Terra人類的愛，立方體會化作流星進入Caelum，若人氣減少則會消逝並回歸Asterum。</p>
+      <p>故事開始於河玟的覺醒，他意外穿越Asterum與Terra之間的裂縫，與創造他的開發者A相遇。開發者A回想起自己創作的其他角色——藝俊、諾亞、斑比與銀虎——因連載中止而人氣流失，於是他召喚他們回到Asterum，與河玟組成PLAVE，透過直播與音樂傳遞夢想與希望，逐漸讓Asterum綻放光彩。</p>
+    </div>
+  </section>
+
+  <section id="members" class="members section light-background">
   <div class="container">
+    <div class="section-title">
+      <h2>成員介紹</h2>
+    </div>
     <div class="row gy-4">
-      <div class="col-xl-12 d-flex" data-aos="fade-up" data-aos-delay="100">
-        <div class="member-item position-relative d-flex align-items-center">
-          <img src="C:\Users\ncucc\Desktop\EUNHOs_PLLI-main\EUNHOs_PLLI-main\assets\img\testimonials\PLAVE Noah-documents-1.jpeg" class="img-fluid me-3" style="width: 130px;>
-          <div>
-            <h4 class="text-start">NOAH</h4>
-            <p>NOAH 擁有穩定而充滿魅力的嗓音，不僅擅長演唱，還具有出色的作詞、作曲能力，是 PLAVE 的靈魂人物。</p>
-          </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="member-card">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\PLAVE-yejun.jpg" alt="YEJUN">
+          <h4>藝俊 (YEJUN)</h4>
+          <p>生日：2001/9/12｜代表色：藍｜代表動物：海豚</p>
+          <p>穩重的隊長，以溫暖堅定的嗓音擔任主唱，是成員的精神支柱。擁有蜜嗓，與銀虎爭奪舞蹈第四名；對成員劇透反應特別大，粉絲能從中察覺劇透內容。</p>
+          <p><a href="https://www.youtube.com/watch?v=N5tGU-Lt_do" target="_blank">翻唱影片 1</a> ｜ <a href="https://www.youtube.com/watch?v=kAAcl3nIe24" target="_blank">翻唱影片 2</a></p>
         </div>
-      </div><!-- End Member Item -->
-      <div class="col-xl-12 d-flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="member-item position-relative d-flex align-items-center">
-          <img src="images/yejun.jpg" alt="YEJUN" class="img-fluid me-3">
-          <div>
-            <h4 class="text-start">YEJUN</h4>
-            <p>隊長 YEJUN 以柔和而富有感染力的聲線著稱，負責團內的主唱部分，能夠駕馭多種音樂風格。</p>
-          </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="member-card">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\PLAVE Noah-documents-1.jpeg" alt="NOAH">
+          <h4>諾亞 (NOAH)</h4>
+          <p>生日：2001/2/10｜代表色：紫｜代表動物：羊駝</p>
+          <p>外貌優雅，實際上愛開玩笑；唱歌時有獨特的「一半空氣」唱法，嗓音像濃厚的起司，外號「起司哥」。</p>
+          <p><a href="https://www.youtube.com/watch?v=jDQ4-C4AHmA" target="_blank">翻唱影片 1</a> ｜ <a href="https://www.youtube.com/watch?v=k1mngeXWbuA" target="_blank">翻唱影片 2</a></p>
         </div>
-      </div><!-- End Member Item -->
-      <div class="col-xl-12 d-flex" data-aos="fade-up" data-aos-delay="300">
-        <div class="member-item position-relative d-flex align-items-center">
-          <img src="images/bamby.jpg" alt="BAMBY" class="img-fluid me-3">
-          <div>
-            <h4 class="text-start">BAMBY</h4>
-            <p>BAMBY 是 PLAVE 的舞蹈擔當，以精湛的編舞技巧和動感十足的舞步，為舞台帶來強烈視覺衝擊。</p>
-          </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="member-card">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\PLAVE-bamby.webp" alt="BAMBY">
+          <h4>斑比 (BAMBY)</h4>
+          <p>生日：2002/7/15｜代表色：粉｜代表動物：鹿</p>
+          <p>可愛外表但聲音有時蠻Man；跳舞實力出眾，日常容易被銀虎惹怒，脫模時會自我修復，人稱「暴力甜心」。</p>
+          <p><a href="https://www.youtube.com/watch?v=HQwhA_apoUY" target="_blank">翻唱影片 1</a> ｜ <a href="https://www.youtube.com/watch?v=kCfDnFCyQoc" target="_blank">翻唱影片 2</a></p>
         </div>
-      </div><!-- End Member Item -->
-      <div class="col-xl-12 d-flex" data-aos="fade-up" data-aos-delay="400">
-        <div class="member-item position-relative d-flex align-items-center">
-          <img src="images/eunho.jpg" alt="EUNHO" class="img-fluid me-3">
-          <div>
-            <h4 class="text-start">EUNHO</h4>
-            <p>EUNHO 兼具演唱與 Rap 的實力，他的獨特嗓音與節奏感，使 PLAVE 的音樂更具層次感。</p>
-          </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="member-card">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\PLAVE-eunho.jpeg" alt="EUNHO">
+          <h4>銀虎 (EUNHO)</h4>
+          <p>生日：2003/5/24｜代表色：紅｜代表動物：狼</p>
+          <p>與藝俊爭奪舞蹈第四名，最新爭奪奪得第四名；跳舞常被斑比吐槽；面對藝line和諾line時能一碗水端平，人稱「端水大師」。</p>
+          <p><a href="https://www.youtube.com/watch?v=rYIV88bZeW0" target="_blank">翻唱影片 1</a> ｜ <a href="https://www.youtube.com/watch?v=VNz4afgxVhA" target="_blank">翻唱影片 2</a></p>
         </div>
-      </div><!-- End Member Item -->
-      <div class="col-xl-12 d-flex" data-aos="fade-up" data-aos-delay="500">
-        <div class="member-item position-relative d-flex align-items-center">
-          <img src="images/hamin.jpg" alt="HAMIN" class="img-fluid me-3">
-          <div>
-            <h4 class="text-start">HAMIN</h4>
-            <p>HAMIN 是團隊的全能擔當，無論是唱歌、舞蹈還是 Rap 都能輕鬆勝任，以獨特個性吸引無數粉絲。</p>
-          </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="member-card">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\PLAVE-hamin3.jpg" alt="HAMIN">
+          <h4>河玟 (HAMIN)</h4>
+          <p>生日：11/1｜代表色：黑｜代表動物：貓</p>
+          <p>身為忙內，外型高大但個性可愛，產生反差萌；舞蹈實力優秀，直播中能現學現跳。</p>
+          <p><a href="https://www.youtube.com/watch?v=4bkEAGNFrf4" target="_blank">翻唱影片 1</a> ｜ <a href="https://www.youtube.com/watch?v=OVBuveGKfvI" target="_blank">翻唱影片 2</a></p>
         </div>
-      </div><!-- End Member Item -->
+      </div>
     </div>
   </div>
-</section><!-- /Members Section -->
+</section>
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
+<section id="mvs" class="section mv-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>PLAVE MV播放</h2>
+      <h4>PLAVE 團體作品</h4>
+    </div>
+    <div class="row gy-4">
+      <div class="col-12">
+        <a href="https://www.youtube.com/watch?v=cFm8fTRW_so" target="_blank">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\wfu.jpg" alt="Wait for You" style="width:100%; border-radius:12px;">
+          <p class="text-center mt-2">▶ 點我觀看《Wait for You》MV</p>
+        </a>
       </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section accent-background">
-
-      <img src="assets/img/cta-bg.jpg" alt="">
-
-      <div class="container">
-        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-10">
-            <div class="text-center">
-              <h3>Call To Action</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="cta-btn" href="#">Call To Action</a>
-            </div>
-          </div>
-        </div>
+      <div class="col-12">
+        <a href="https://www.youtube.com/watch?v=c_yCRwh97M8" target="_blank">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\t6s.jpg" alt="Why?" style="width:100%; border-radius:12px;">
+          <p class="text-center mt-2">▶ 點我觀看《The 6th Summer》MV</p>
+        </a>
       </div>
-
-    </section><!-- /Call To Action Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Product</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
+      <div class="col-12">
+        <a href="https://www.youtube.com/watch?v=FxB6_qaqHlY" target="_blank">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\w4l.jpg" alt="WAY 4 LUV" style="width:100%; border-radius:12px;">
+          <p class="text-center mt-2">▶ 點我觀看《WAY 4 LUV》MV</p>
+        </a>
       </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
+      <div class="col-12">
+        <a href="https://www.youtube.com/watch?v=EYG4ROejmyI" target="_blank">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\putv.jpg" alt="Pump Up The Volume!'" style="width:100%; border-radius:12px;">
+          <p class="text-center mt-2">▶ 點我觀看《Pump Up The Volume!'》MV</p>
+        </a>
       </div>
-
-    </section><!-- /Testimonials Section -->
-
-    <!-- Team Section -->
-    <section id="team" class="team section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Team Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Free Plan</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <a href="#" class="buy-btn">Buy Now</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pricing-item featured">
-              <h3>Business Plan</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <a href="#" class="buy-btn">Buy Now</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="pricing-item">
-              <h3>Developer Plan</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <a href="#" class="buy-btn">Buy Now</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Pricing Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Frequently Asked Questions</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>Non consectetur a erat nam at lectus urna duis?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Aperiam itaque sit optio et deleniti eos nihil quidem cumque. Voluptas dolorum accusantium sunt sit enim. Provident consequuntur quam aut reiciendis qui rerum dolorem sit odio. Repellat assumenda soluta sunt pariatur error doloribus fuga.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-      </div>
-
-    </section><!-- /Faq Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Squadfree</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
-        </div>
-
+      <div class="col-12">
+        <a href="https://www.youtube.com/watch?v=b3GoZMfHJT4" target="_blank">
+          <img src="C:\Users\張傑翔\Desktop\EUNHOs_PLLI-main\testimonials\d.jpg" alt="ASTRA" style="width:100%; border-radius:12px;">
+          <p class="text-center mt-2">▶ 點我觀看《Dash》MV</p>
+        </a>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Squadfree</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
 
-  </footer>
+</main>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+<!-- JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
