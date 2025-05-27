@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+
+<style>
+    body {
+        font-family: 'Lato', 'Merriweather', 'sans-serif';
+    }
+
+    h1, h2, h3 {
+        font-family: 'Parisienne', cursive;
+    }
+
+    #question-text, .option-btn .option-text, #result-feedback, #explanation-text, #score-display, #timer-display {
+        font-family: 'Lato', 'Merriweather', 'sans-serif';
+    }
+
+    p, label, input, button {
+        font-family: 'Merriweather', 'serif';
+    }
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇫🇷 探索法國文化挑戰 🇫🇷</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    body {
+        font-family: 'Lato', 'Merriweather', 'sans-serif';
+    }
+
+    h1, h2, h3 {
+        font-family: 'Parisienne', cursive;
+    }
+
+    #question-text, .option-btn .option-text, #result-feedback, #explanation-text, #score-display, #timer-display {
+        font-family: 'Lato', 'Merriweather', 'sans-serif';
+    }
+
+    p, label, input, button {
+        font-family: 'Merriweather', 'serif';
+    }
+</style>
+
+</head>
+<body>
+    <div id="game-wrapper">
+        <header>
+            <h1>🇫🇷 探索法國文化挑戰 🇫🇷</h1>
+        </header>
+
+        <main id="game-main-content">
+            <div id="start-screen" class="screen active">
+                <div class="start-deco-top"></div>
+                <p>在有限時間內，挑戰 25 題法國文化知識！</p>
+                <button id="start-game-btn" class="btn btn-primary">開始挑戰 <i class="fas fa-play-circle"></i></button>
+                <div class="start-deco-bottom"></div>
+            </div>
+
+            <div id="quiz-screen" class="screen">
+                <div class="game-info">
+                    <span id="current-question-count" class="info-item"><i class="fas fa-list-ol"></i> 題數：1 / 25</span>
+                    <span id="score-display" class="info-item"><i class="fas fa-star"></i> 分數：0</span>
+                    <span id="timer-display" class="info-item"><i class="fas fa-clock"></i> 時間：20 秒</span>
+                </div>
+                <div id="question-card">
+                    <p id="question-text"></p>
+                    <div id="options-grid">
+                        <button class="option-btn"><span class="option-text"></span></button>
+                        <button class="option-btn"><span class="option-text"></span></button>
+                        <button class="option-btn"><span class="option-text"></span></button>
+                        <button class="option-btn"><span class="option-text"></span></button>
+                    </div>
+                    <div id="feedback-area">
+                        <p id="result-feedback"></p>
+                        <p id="explanation-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="game-over-screen" class="screen">
+                <h2>挑戰結束！🎉</h2>
+                <p class="final-score-text">你的最終分數：<span id="final-score-value"></span></p>
+                <div class="score-submission-area">
+                    <label for="player-name-input"><i class="fas fa-user-edit"></i> 輸入你的名字：</label>
+                    <input type="text" id="player-name-input" placeholder="匿名英雄">
+                    <button id="submit-score-btn" class="btn btn-primary">提交分數 <i class="fas fa-paper-plane"></i></button>
+                </div>
+                <button id="play-again-btn" class="btn btn-secondary"><i class="fas fa-redo-alt"></i> 再玩一次</button>
+            </div>
+
+            <div id="loading-screen" class="screen">
+                <div class="loader"></div>
+                <p>載入題目中... 請稍候</p>
+            </div>
+        </main>
+
+        <aside id="leaderboard-sidebar">
+            <h2>🏆 即時排行榜 🏆</h2>
+            <ol id="leaderboard-list"></ol>
+        </aside>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

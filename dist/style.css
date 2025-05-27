@@ -1,0 +1,738 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+:root {
+    /* 法式柔和色系 */
+    --primary-color: #728FCE; /* 法國藍 */
+    --secondary-color: #FFDAB9; /* 蜜桃色 */
+    --accent-color: #F08080; /* 淡珊瑚紅 */
+    --background-light: #FDFBF8; /* 近乎白色的暖米色 */
+    --background-dark: #E0EBF7; /* 淺灰藍 */
+
+    --text-color-dark: #3a3a3a; /* 深灰文字 */
+    --text-color-light: #6a6a6a; /* 淺灰文字 */
+    --correct-color: #8BC34A; /* 鮮綠 */
+    --wrong-color: #E64A19;   /* 鮮紅 */
+
+    /* 通用樣式 */
+    --border-radius-lg: 20px;
+    --border-radius-md: 12px;
+    --shadow-deep: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s ease;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* 預設文字使用 Lato */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, var(--background-light) 0%, var(--background-dark) 100%);
+    color: var(--text-color-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background-image: url('C:\Users\ncucc\Desktop\法國\untitled\dist\pic\France_Paris_Eiffel-Tower_AFotolia_65117955-min-1-jpg.webp'); /* 替換為你的背景圖 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#game-wrapper {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.95); /* 半透明白底 */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-deep);
+    width: 90%;
+    max-width: 1300px; /* 增加最大寬度 */
+    min-height: 750px;
+    overflow: hidden;
+    margin: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* 輕微邊框 */
+    backdrop-filter: blur(5px); /* 模糊背景 */
+}
+
+header {
+    background: linear-gradient(to right, var(--primary-color), #8BA8DC); /* 漸變背景 */
+    padding: 35px 25px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    border-top-left-radius: var(--border-radius-lg);
+    border-top-right-radius: var(--border-radius-lg);
+    position: relative;
+    overflow: hidden; /* 隱藏超出部分的裝飾 */
+}
+
+header::before { /* 左上角裝飾 */
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+header::after { /* 右下角裝飾 */
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+
+header h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: 4em; /* 更大標題 */
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3); /* 更深陰影 */
+    letter-spacing: 2px;
+}
+
+#game-main-content {
+    flex-grow: 1;
+    padding: 50px; /* 增加內邊距 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* 隱藏溢出內容 */
+    background-image: url('images/eiffel-tower.png'); /* 替換為你的巴黎鐵塔圖 */
+    background-size: 20%; /* 較小 */
+    background-position: bottom right; /* 放在右下角 */
+    background-repeat: no-repeat;
+    opacity: 0.8; /* 半透明 */
+}
+
+.screen {
+    position: absolute;
+    width: 90%;
+    max-width: 650px; /* 略增寬度 */
+    padding: 40px; /* 增加內邊距 */
+    background-color: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* 更流暢的過渡 */
+    border: 1px solid #f0f0f0; /* 細邊框 */
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    position: relative;
+}
+
+/* Start Screen */
+#start-screen {
+    position: relative;
+    padding-top: 60px; /* 為裝飾留出空間 */
+    padding-bottom: 60px;
+    background: linear-gradient(135deg, #FFF8F3, #FFF); /* 淺色漸變背景 */
+    overflow: hidden;
+}
+
+.start-deco-top, .start-deco-bottom {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    box-shadow: var(--shadow-light);
+}
+
+.start-deco-top {
+    top: 20px;
+}
+
+.start-deco-bottom {
+    bottom: 20px;
+}
+
+
+#start-screen p {
+    font-family: 'Merriweather', serif; /* 內容文字字體 */
+    font-size: 1.4em;
+    color: var(--text-color-light);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Quiz Screen */
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 35px;
+    background: linear-gradient(45deg, var(--secondary-color), #FFC699); /* 漸變背景 */
+    padding: 18px 20px;
+    border-radius: var(--border-radius-md);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.15); /* 內陰影 */
+    font-weight: 700;
+    color: white; /* 資訊文字顏色 */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.info-item {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 圖標與文字間距 */
+}
+
+.info-item i {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1em;
+}
+
+#question-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-deep);
+    width: 100%;
+    text-align: center;
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+#question-card::before { /* 左上角小圓點裝飾 */
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--accent-color);
+}
+#question-card::after { /* 右下角小圓點裝飾 */
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+
+#question-text {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8em; /* 更大問題字體 */
+    margin-bottom: 30px;
+    color: var(--text-color-dark);
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+#options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* 增加間距 */
+    margin-bottom: 30px;
+}
+
+.option-btn {
+    padding: 20px 25px; /* 增加內邊距 */
+    font-size: 1.15em;
+    background: linear-gradient(45deg, var(--primary-color), #A0B9BA); /* 漸變背景 */
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: var(--transition-speed);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative; /* For option text span */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-btn .option-text {
+    position: relative; /* 使文字在圖標上方 */
+    z-index: 2;
+}
+
+/* 小裝飾圖標，可以替換為其他符號 */
+.option-btn::before {
+    content: '★'; /* 或 '•', '▶' */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.5);
+    transition: var(--transition-speed);
+    z-index: 1;
+}
+
+.option-btn:hover:not(:disabled) {
+    background: linear-gradient(45deg, #5C7CCF, #8BA8DC); /* Hover 漸變 */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.option-btn:hover:not(:disabled)::before {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-50%) translateX(5px);
+}
+
+.option-btn:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.option-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: #bbb;
+}
+
+.option-btn.correct {
+    background: linear-gradient(45deg, var(--correct-color), #A5D6A7);
+    color: white;
+}
+
+.option-btn.wrong {
+    background: linear-gradient(45deg, var(--wrong-color), #EF9A9A);
+    color: white;
+}
+/* For correct/wrong options, hide default icon and show custom icon */
+.option-btn.correct::before, .option-btn.wrong::before {
+    content: ''; /* Hide default icon */
+}
+.option-btn.correct::after { /* Checkmark icon */
+    content: '\f00c'; /* FontAwesome check icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.9);
+}
+.option-btn.wrong::after { /* Cross icon */
+    content: '\f00d'; /* FontAwesome cross icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+#feedback-area {
+    min-height: 120px; /* 確保空間，避免跳動 */
+    margin-top: 20px;
+    background-color: #f8fcfd;
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    border: 1px dashed #DDEBF0;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+}
+
+#result-feedback {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#explanation-text {
+    font-size: 1em;
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* Game Over Screen */
+#game-over-screen {
+    background: linear-gradient(135deg, #FFFAEE, #FFF); /* 淺色漸變 */
+}
+#game-over-screen h2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 3.5em;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.final-score-text {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.score-submission-area {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #fefefe;
+    border-radius: var(--border-radius-md);
+    border: 1px solid #f0f0f0;
+    box-shadow: var(--shadow-light);
+}
+
+.score-submission-area label {
+    display: flex; /* 圖標與文字對齊 */
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--text-color-dark);
+}
+.score-submission-area label i {
+    color: var(--primary-color);
+}
+
+#player-name-input {
+    padding: 14px 18px;
+    width: calc(100% - 36px); /* 調整內邊距 */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: var(--text-color-dark);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+}
+#player-name-input::placeholder {
+    color: #aaa;
+}
+
+
+.btn {
+    padding: 16px 35px; /* 增加內邊距 */
+    font-size: 1.15em;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: var(--transition-speed);
+    margin: 10px 15px; /* 增加按鈕間距 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    display: inline-flex; /* 讓圖標和文字對齊 */
+    align-items: center;
+    gap: 10px;
+}
+
+.btn i {
+    font-size: 1.1em;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), #8BA8DC);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #5C7CCF, #728FCE);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, var(--secondary-color), #FFC699);
+    color: var(--text-color-dark);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(45deg, #FFC699, #FFAD7C);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Loading Screen */
+#loading-screen {
+    background-color: rgba(255, 255, 255, 0.98);
+    z-index: 10;
+    font-family: 'Merriweather', serif;
+    font-size: 1.3em;
+    color: var(--text-color-light);
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid var(--primary-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Leaderboard Sidebar */
+#leaderboard-sidebar {
+    width: 350px; /* 略增寬度 */
+    background: linear-gradient(to bottom, #FFE8D6, #FFEDD6); /* 淺色暖色漸變 */
+    padding: 35px 25px;
+    border-top-right-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+    box-shadow: inset 5px 0 15px rgba(0,0,0,0.05); /* 內陰影 */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+#leaderboard-sidebar h2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 3em; /* 更大標題 */
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 2; /* 確保在背景圖上方 */
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px; /* 避免滾動條遮擋內容 */
+}
+
+#leaderboard-list li {
+    background-color: #fff;
+    padding: 15px 20px; /* 增加內邊距 */
+    margin-bottom: 12px; /* 增加間距 */
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    color: var(--text-color-dark);
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 5px solid var(--secondary-color); /* 左側裝飾線 */
+}
+
+#leaderboard-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+#leaderboard-list li:first-child {
+    font-weight: bold;
+    color: #DAA520; /* 金色 */
+    border: 3px solid #DAA520;
+    background: linear-gradient(45deg, #FFEFD5, #FFF8DC); /* 淺金漸變 */
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 5px 20px rgba(218, 165, 32, 0.3); /* 金色陰影 */
+    position: relative;
+    overflow: hidden;
+}
+#leaderboard-list li:first-child::before {
+    content: '🥇'; /* 金牌圖標 */
+    position: absolute;
+    left: 10px;
+    font-size: 1.5em;
+    transform: translateY(-50%);
+    top: 50%;
+}
+#leaderboard-list li:first-child span:first-child {
+    padding-left: 30px; /* 為圖標留出空間 */
+}
+
+#leaderboard-list li:nth-child(2) {
+    border: 2px solid #C0C0C0; /* 銀色 */
+    background: linear-gradient(45deg, #F0F0F0, #E0E0E0);
+    position: relative;
+}
+#leaderboard-list li:nth-child(2)::before {
+    content: '🥈'; /* 銀牌圖標 */
+    position: absolute;
+    left: 10px;
+    font-size: 1.5em;
+    transform: translateY(-50%);
+    top: 50%;
+}
+#leaderboard-list li:nth-child(2) span:first-child {
+    padding-left: 30px;
+}
+
+#leaderboard-list li:nth-child(3) {
+    border: 2px solid #CD7F32; /* 銅色 */
+    background: linear-gradient(45deg, #FAEBD7, #F5DEB3);
+    position: relative;
+}
+#leaderboard-list li:nth-child(3)::before {
+    content: '🥉'; /* 銅牌圖標 */
+    position: absolute;
+    left: 10px;
+    font-size: 1.5em;
+    transform: translateY(-50%);
+    top: 50%;
+}
+#leaderboard-list li:nth-child(3) span:first-child {
+    padding-left: 30px;
+}
+
+/* 隱藏滾動條（美化） */
+#leaderboard-list::-webkit-scrollbar {
+    width: 8px;
+}
+#leaderboard-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+#leaderboard-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+#leaderboard-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1000px) { /* 調整斷點 */
+    #game-wrapper {
+        flex-direction: column;
+        min-height: auto;
+        margin: 15px;
+    }
+
+    #leaderboard-sidebar {
+        width: 100%;
+        border-radius: var(--border-radius-lg);
+        margin-top: 15px;
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+    }
+
+    header {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    #game-main-content {
+        padding: 30px;
+        background-position: center bottom; /* 鐵塔背景圖在小螢幕上可以居中 */
+        background-size: 40%;
+    }
+
+    .screen {
+        width: 100%;
+        padding: 25px;
+        margin: 0 auto;
+    }
+
+    #options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+    #leaderboard-sidebar h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .game-info {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .info-item {
+        font-size: 1em;
+    }
+
+    #question-text {
+        font-size: 1.4em;
+    }
+
+    .option-btn {
+        font-size: 0.95em;
+        padding: 15px 20px;
+    }
+    .option-btn::before {
+        left: 10px;
+    }
+    .option-btn.correct::after, .option-btn.wrong::after {
+        right: 10px;
+        font-size: 1.2em;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+        margin: 8px 10px;
+        gap: 8px;
+    }
+
+    #game-main-content {
+        padding: 20px;
+        background-size: 50%;
+    }
+
+    #game-over-screen h2 {
+        font-size: 2.8em;
+    }
+
+    .final-score-text {
+        font-size: 1.3em;
+    }
+
+    #player-name-input {
+        padding: 10px 15px;
+    }
+
+    #leaderboard-sidebar h2 {
+        font-size: 2em;
+    }
+    #leaderboard-list li {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+    #leaderboard-list li:first-child::before,
+    #leaderboard-list li:nth-child(2)::before,
+    #leaderboard-list li:nth-child(3)::before {
+        font-size: 1.2em;
+    }
+    #leaderboard-list li:first-child span:first-child,
+    #leaderboard-list li:nth-child(2) span:first-child,
+    #leaderboard-list li:nth-child(3) span:first-child {
+        padding-left: 25px;
+    }
+}
